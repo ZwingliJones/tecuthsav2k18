@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Tecuthsav</title>
+		<meta name="description" />
+		<meta name="keywords" />
+		<meta name="author" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="https://fonts.googleapis.com/css?family=Barlow:400,500,700|Playfair+Display" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/mainpage.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo1.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<script>
+		document.documentElement.className="js";
+		var supportsCssVars=function(){
+			var e,t=document.createElement("style");
+			return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};
+			supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");
+			</script>
+			<script>
+				function myFunction() {
+				    document.getElementById("myDropdown").classList.toggle("show");
+				}
+
+
+				window.onclick = function(event) {
+				  if (!event.target.matches('.dropbtn')) {
+
+				    var dropdowns = document.getElementsByClassName("dropdown-content");
+				    var i;
+				    for (i = 0; i < dropdowns.length; i++) {
+				      var openDropdown = dropdowns[i];
+				      if (openDropdown.classList.contains('show')) {
+				        openDropdown.classList.remove('show');
+				      }
+				    }
+				  }
+				}
+			</script>
+
+			<script>
+				function myFunction1() {
+				    document.getElementById("myDropdown1").classList.toggle("show");
+				}
+
+
+				window.onclick = function(event) {
+				  if (!event.target.matches('.dropbtn')) {
+
+				    var dropdowns = document.getElementsByClassName("dropdown-content");
+				    var i;
+				    for (i = 0; i < dropdowns.length; i++) {
+				      var openDropdown = dropdowns[i];
+				      if (openDropdown.classList.contains('show')) {
+				        openDropdown.classList.remove('show');
+				      }
+				    }
+				  }
+				}
+			</script>
+	</head>
+	<body class="demo-1">
+		<main>	
+			<a class="imagelogo"  href="https://www.tce.edu"><img src="img/tcelogo.png"></a>
+			<h2 class="content-subtitle" style="text-align: center; background-color:#961228;margin: 0px 0%; padding: 30px;letter-spacing: 0.5em;
+			font-size: 30px;">THIAGARAJAR COLLEGE OF ENGINEERING</h2>
+			<a class="logo"  href="https://www.tce.edu"><img src="img/logo.png"></a>
+			<div class="navigation-container">
+				<nav class="navigation">
+						<ul><li id="tech">Tecuthsav - 2K18</li>
+							<li><a href="#About">About</a></li>
+							<li><div class="dropdown">
+										<button onclick="myFunction1()" class="dropbtn">Workshop</button>
+										  <div id="myDropdown1" class="dropdown-content">
+										   	<a  href="workshopMech.html"><span>Mechanical</span></a>
+											<a  href="workshopCse.html"><span>CSE</span></a>
+											<a  href="workshopEce.html"><span>ECE</span></a>
+											<a  href="workshopEee.html"><span>EEE</span></a>
+											<a  href="workshopCivil.html"><span>CIVIL</span></a>
+											<a  href="workshopCse.html"><span>IT</span></a>
+											<a  href="workshopMechatronics.html"><span>MECHATRONICS</span></a>
+											<a  href="workshopCse.html"><span>MCA</span></a>
+											<a  href="workshopArch.html"><span>Architecture</span></a>
+
+										  </div>
+									</div>
+							</li>
+							<li><div class="dropdown">
+										<button onclick="myFunction()" class="dropbtn">Department Events</button>
+										  <div id="myDropdown" class="dropdown-content">
+										   	<a  href="Mech.html"><span>Mechanical</span></a>
+											<a  href="Cse.html"><span>CSE</span></a>
+											<a  href="Ece.html"><span>ECE</span></a>
+											<a  href="Eee.html"><span>EEE</span></a>
+											<a  href="Civil.html"><span>CIVIL</span></a>
+											<a  href="It.html"><span>IT</span></a>
+											<a  href="Mechatronic.html"><span>MECHATRONICS</span></a>
+											<a  href="Mca.html"><span>MCA</span></a>
+											<a  href="Arch.html"><span>Architecture</span></a>
+										  </div>
+									</div>
+							</li>
+							
+							<li><a href="#socialfeed">Live Feeds</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+				</nav>
+
+			</div>
+			<marquee style="color: yellow; font-size:18px ;" ><b Style="color:red"> Anouncement!!</b>One time payment registration for all events and Workshops within each departments only. Payments will be considered per head and not as team. Amount will be collected in College.</marquee>
+			
+			<div>
+				<img src="img/workshopbanner.jpg" height="70" width="300" ><img src="img/eventbanner.jpg" height="70" width="300" align="right"></div>
+			<div class="content">
+				<div class="content__inner">
+					
+					<h2 >23rd and 24th February 2018</h2>
+
+				</div>
+
+
+				<canvas class="scene scene--full" id="scene"></canvas>
+				<script type="x-shader/x-vertex" id="wrapVertexShader">
+					attribute float size;
+					attribute vec3 color;
+					varying vec3 vColor;
+					void main() {
+						vColor = color;
+						vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+						gl_PointSize = size * ( 350.0 / - mvPosition.z );
+						gl_Position = projectionMatrix * mvPosition;
+					}
+				</script>
+				<script type="x-shader/x-fragment" id="wrapFragmentShader">
+					varying vec3 vColor;
+					uniform sampler2D texture;
+					void main(){
+						vec4 textureColor = texture2D( texture, gl_PointCoord );
+						if ( textureColor.a < 0.3 ) discard;
+						vec4 color = vec4(vColor.xyz, 1.0) * textureColor;
+						gl_FragColor = color;
+					}
+				</script>  
+				<div class="content__inner">
+					<h2 class="content__title">Tecuthsav'18</h2>
+					<h2 class="content__subtitle">23rd and 24th February 2018</h2>
+
+				</div>
+			</div>
+
+			<section id="About" class="about-container">
+				<!--<h2 class="content-subtitle" style="text-align: center; background-color:#961228;margin: 0px 0%; padding: 10px;">About the Festival</h2>
+					<div class="about-content" style="background-color:#ffb1fc;">
+						<h1 style="color: #1faf43; text-shadow: 1px 1px 1px black; text-align: center;margin: 0px 0px; font-family: cursive;">Influ(h)ence</h1>
+						<p style="line-height: 1.5;padding: 20px 20px;color: black;"><b>"To be inspired is great, to inspire is incredible"</b><br>Ever since the beginning, we are always influenced and are being influenced and the process perpetuates.  The green infinity belt wrapping the grey - green earth is an abstract of how since origin, the earth and the people had reached this present.  The belt can also be percieved as a chain that links - or can be reinstated i.e, influences which has an impact on one other and also a minimal representation of "I" for influence.
+							Come and join with Us. Your collaborative make the event even more better.<br>
+							<b>"Our greatest Glory is not in never falling, but in rising every time we fall!"</b>
+						</p>
+					</div>-->
+				<table>
+					<tr><th id="days">2 Days</th>
+						<th id="eventss">50+ Events</th>
+						<th id="prizes">3L+ Prizes</th>
+					</tr>
+					<tr>
+						<td id="days">Express your Tech Skills</td>
+						<td id="eventss">Lot more Events that matches your Passion</td>
+						<td id="prizes">Great Competitors and Prizes</td>
+					</tr>
+				</table>
+			</section>
+			<section id="socialfeed" class="facebookpage">
+	                    <h2 class="content-subtitle" style="text-align: center; background-color:#961228;margin: 0px 0%; padding: 10px;">#Follow Us</h2>
+	                        <p style="text-align: center;font-size: 20px;">Tecuthsav Official page and Location</p>
+	                	<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTheOfficialTCEPage&tabs=timeline&width=540&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="540" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+	                
+	              	    <iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ41aqj8bPADsR8HU0BpQ138Y&key=AIzaSyCpasmkzVfo5ExSY8yv9yLES8zXJrZSlUA" width="540" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>	          	
+			</section>
+
+			<section id="contact" class="contact-class">
+				<h2 class="content-subtitle" style="text-align: center; background-color:#961228;margin: 0px 0%; padding: 10px;">Radio Patner</h2>
+				<div class="contact-container">
+					
+					<br> <img src="img/suryan.jpg" height="100" width="200">
+					<p> BY Suryan FM 93.5</p>
+				</div>
+
+			</section>
+			<section id="contact" class="contact-class">
+				<h2 class="content-subtitle" style="text-align: center; background-color:#961228;margin: 0px 0%; padding: 10px;">Contact Us</h2>
+				<div class="contact-container">
+					<p>Feel free to Post your Queries to our email!</p>
+					<p style="color: lightgreen;">tecuthsavevents@gmail.com</p>
+					<ul><li><a href="https://www.facebook.com/TheOfficialTCEPage" class="fa fa-facebook"></li></a>
+					<li><a href="https://twitter.com/tceofficialpage" class="fa fa-twitter"></li></a>
+					<li><a href="https://www.linkedin.com/in/tcemadurai" class="fa fa-linkedin"></li></a></ul>
+					<p> Copyright &copy; TCE 2018
+				</div>
+
+			</section>
+		
+		</main>
+
+		<script src="js/main/demo.js"></script>
+		<script src="js/main/three.min.js"></script>
+		<script src="js/main/TweenMax.min.js"></script>
+		<script src="js/main/demo1.js"></script>
+
+
+	</body>
+</html>
